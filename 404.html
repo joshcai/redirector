@@ -19,14 +19,13 @@
       }
       
       let pathname = window.location.pathname;
-      if (pathname in redirectDict) {
-        const val = redirectDict[pathname];
-        if (val.startsWith('http')) {
-          window.location.replace(val);
-        }
-        pathname = val;
+      const val = redirectDict[pathname] ?? pathname;
+      if (val.startsWith('http')) {
+        redirectPath = val;
+      } else {
+        redirectPath = 'https://joshcai.com' + val;
       }
-      window.location = 'https://joshcai.com' + pathname;
+      window.location.replace(redirectPath);
     </script>
   </body>
 </html>
