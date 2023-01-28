@@ -22,7 +22,7 @@
       if (pathname in redirectDict) {
         const val = redirectDict[pathname];
         if (val.startsWith('http')) {
-          window.location = val;
+          window.location.replace(val);
         }
         pathname = val;
       }
