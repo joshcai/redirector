@@ -19,8 +19,8 @@
       }
       
       let pathname = window.location.pathname;
-      if (window.location.pathname in redirectDict) {
-        const val = redirectDict[window.location.pathname];
+      if (pathname in redirectDict) {
+        const val = redirectDict[pathname];
         if (val.startsWith('http')) {
           window.location = val;
         }
